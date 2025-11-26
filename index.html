@@ -363,13 +363,19 @@
 
         .total-number {
             font-family: 'Outfit', sans-serif;
-            font-size: 4rem;
+            font-size: clamp(2.5rem, 10vw, 4rem);
             font-weight: 700;
             line-height: 1;
             margin: 10px 0;
             background: linear-gradient(to bottom, #ffffff, #cfd8dc);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        @media (max-width: 768px) {
+            .total-area {
+                padding: 30px 20px;
+            }
         }
 
         /* Staff */
@@ -665,18 +671,18 @@
                 <div class="staff-grid">
                     <div class="staff-box">
                         <div class="staff-count">4<span style="font-size: 0.4em;">名</span></div>
-                        <div class="staff-role">正社員</div>
+                        <div class="staff-role">社員</div>
                     </div>
                     <div class="staff-box">
                         <div class="staff-count">12<span style="font-size: 0.4em;">名</span></div>
                         <div class="staff-role">栽培スタッフ</div>
                     </div>
                     <div class="staff-box">
-                        <div class="staff-count">6<span style="font-size: 0.4em;">名</span></div>
+                        <div class="staff-count">8<span style="font-size: 0.4em;">名</span></div>
                         <div class="staff-role">海外スタッフ</div>
                     </div>
                     <div class="staff-box" style="background: #263238; color: white;">
-                        <div class="staff-count" style="color: white;">22<span
+                        <div class="staff-count" style="color: white;">24<span
                                 style="font-size: 0.4em; opacity: 0.7;">名</span></div>
                         <div class="staff-role" style="color: rgba(255,255,255,0.7);">総スタッフ数</div>
                     </div>
@@ -691,15 +697,17 @@
                     <div class="timeline-card" style="border-left-color: #ff5252;">
                         <span class="t-date" style="color: #ff5252;">7/15・22</span>
                         <div class="t-title">🌱 大玉トマト定植</div>
-                        <div class="t-imgs">
-                            <img src="定植.jpg" alt="定植">
-                            <img src="定植2.jpg" alt="定植後">
+                        <div class="t-imgs" style="grid-template-columns: 1fr;">
+                            <img src="定植.jpg" alt="大玉トマト定植" style="height: 120px;">
                         </div>
                     </div>
 
                     <div class="timeline-card" style="border-left-color: #ff9800;">
                         <span class="t-date" style="color: #ff9800;">7/30・8/6</span>
                         <div class="t-title">🌱 ミニトマト定植</div>
+                        <div class="t-imgs" style="grid-template-columns: 1fr;">
+                            <img src="定植2.jpg" alt="ミニトマト定植" style="height: 120px;">
+                        </div>
                     </div>
 
                     <div class="timeline-card" style="border-left-color: #4caf50;">
@@ -709,12 +717,12 @@
                     </div>
 
                     <div class="timeline-card" style="border-left-color: #7e57c2; grid-column: span 1;">
-                        <span class="t-date" style="color: #7e57c2;">9月 〜 翌6月</span>
+                        <span class="t-date" style="color: #7e57c2;">9月 〜 翌6月末</span>
                         <div class="t-title">📦 収穫期間 (9-10ヶ月)</div>
                     </div>
 
                     <div class="timeline-card" style="border-left-color: #ec407a;">
-                        <span class="t-date" style="color: #ec407a;">6月中旬〜7月初</span>
+                        <span class="t-date" style="color: #ec407a;">6月中旬〜7月初旬</span>
                         <div class="t-title">✂️ 作終わり</div>
                         <div class="t-imgs" style="grid-template-columns: 1fr;">
                             <img src="撤去.jpg" alt="撤去" style="height: 100px;">
@@ -754,7 +762,7 @@
                     <div class="feature-box">
                         <span class="feature-icon">🛡️</span>
                         <div class="feature-title">減農薬</div>
-                        <div class="feature-text">銅剤（クプロシールド）等を活用し農薬を最小限に</div>
+                        <div class="feature-text">銅剤、ＢＴ剤等を活用し農薬を最小限に</div>
                     </div>
                 </div>
             </section>
@@ -769,7 +777,7 @@
                     </div>
                     <div class="equip-item">
                         <div class="equip-cat">🎛️ 環境制御</div>
-                        <div class="equip-desc">オムニアコンチェルト・コンチェルト（統合制御）<br>デンソー ProFarm</div>
+                        <div class="equip-desc">統合制御機器（オムニアコンチェルト・デンソー）</div>
                     </div>
                     <div class="equip-item">
                         <div class="equip-cat">🚜 作業車両</div>
@@ -781,7 +789,7 @@
                     </div>
                     <div class="equip-item">
                         <div class="equip-cat">☀️ 光・遮熱</div>
-                        <div class="equip-desc">LED補光（シグニファイ）、遮熱剤（レディヒート）、屋根上散水</div>
+                        <div class="equip-desc">LED補光（シグニファイ）、遮熱剤（誠和）、屋根上散水</div>
                     </div>
                     <div class="equip-item">
                         <div class="equip-cat">🎋 誘引</div>
@@ -789,7 +797,7 @@
                     </div>
                     <div class="equip-item">
                         <div class="equip-cat">🌡️ 保温</div>
-                        <div class="equip-desc">外周内張（エコポカプチ）、2重カーテン（誠和）</div>
+                        <div class="equip-desc">外周内張（川上産業）、2重カーテン（誠和）</div>
                     </div>
                     <div class="equip-item">
                         <div class="equip-cat">📊 データ・出荷</div>
