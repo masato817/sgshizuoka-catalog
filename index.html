@@ -552,6 +552,7 @@
         .article-reader { background: var(--surface); border-radius: var(--radius-md); padding: 30px; box-shadow: var(--shadow-md); margin-top: 20px; }
         .article-reader .article { display: none; }
         .article-reader .article.active { display: block; }
+        .article-reader:not(:has(.article.active)) { display: none; }
         .article-reader .article h1 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.5; color: var(--primary-dark); }
         .article-reader .article h2 { font-size: 1.1rem; margin: 1.5rem 0 0.6rem; padding-bottom: 0.2rem; border-bottom: 2px solid var(--primary); color: var(--text-main); }
         .article-reader .article h3 { font-size: 1rem; margin: 1.2rem 0 0.4rem; color: var(--primary-dark); }
@@ -633,7 +634,6 @@
                         <div class="gallery-grid">
                             <img src="大玉.jpg" alt="大玉トマト" class="gallery-img">
                             <img src="大玉2.jpg" alt="大玉トマト栽培風景" class="gallery-img">
-                            <img src="14420EE0-5026-404F-8128-1CD082A4F420.jpg" alt="大玉トマトLED補光栽培" class="gallery-img">
                             <img src="1号棟.jpg" alt="1号棟外観" class="gallery-img large">
                         </div>
                     </div>
@@ -1123,11 +1123,14 @@
     </div>
     <script>
         (function() {
+            var reader = document.querySelector('.article-reader');
             var articles = document.querySelectorAll('.article-reader .article');
             var buttons = document.querySelectorAll('.article-btn');
+            reader.style.display = 'none';
             function showArticle(articleId) {
                 articles.forEach(function(a) { a.classList.toggle('active', a.id === articleId); });
                 buttons.forEach(function(b) { b.classList.toggle('active', b.dataset.article === articleId); });
+                reader.style.display = '';
             }
             buttons.forEach(function(btn) {
                 btn.addEventListener('click', function() { showArticle(btn.dataset.article); });
